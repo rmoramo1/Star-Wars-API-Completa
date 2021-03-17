@@ -1,15 +1,34 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import Cards from "../component/cards";
 import "../../styles/home.scss";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
-);
+export const Home = () => {
+	let personajes = [
+		{ nombre: "Lucke", genero: "Masculino", Hair_Color: "macho", eye: "cafe" },
+		{ nombre: "Princesa Leia", genero: "Femenino", Hair_Color: "Cafe", eye: "Cafes" },
+		{ nombre: "han solo", genero: "Masculino", Hair_Color: "Cafe", eye: "negros" },
+		{
+			nombre: "Chubaca",
+			genero: "Masculino",
+			Hair_Color: "Cafe",
+			eye: "cafe"
+		}
+	];
+	return (
+		<div className="row">
+			{personajes.map((item, index) => {
+				return (
+					<div key={index} className="col">
+						<Cards
+							key={index}
+							nombre={item.nombre}
+							genero={item.genero}
+							Hair_Color={item.Hair_Color}
+							eye={item.eye}
+						/>
+					</div>
+				);
+			})}
+		</div>
+	);
+};
