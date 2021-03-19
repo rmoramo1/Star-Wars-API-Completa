@@ -1,10 +1,14 @@
-import React from "react";
-import Cards from "../component/personajes";
+import React, { useState, useEffect, useContext } from "react";
+import Card from "../component/personajes";
 import CardPlanetas from "../component/planetas";
 import "../../styles/home.scss";
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Home = () => {
-	let personajes = [
+	const { store, actions } = useContext(Context);
+
+	/*let personajes = [
 		{ nombre: "Lucke", genero: "Masculino", Hair_Color: "macho", eye: "cafe" },
 		{ nombre: "Princesa Leia", genero: "Femenino", Hair_Color: "Cafe", eye: "Cafes" },
 		{ nombre: "han solo", genero: "Masculino", Hair_Color: "Cafe", eye: "negros" },
@@ -17,17 +21,18 @@ export const Home = () => {
 		{ planeta: "Venus", terrain: "Veneciano", poblacion: "343400" },
 		{ planeta: "Saturno", terrain: "Saturniano", poblacion: "103434" },
 		{ planeta: "Pluton", terrain: "Plutoniano", poblacion: "3578647" }
-	];
+    ];*/
+
 	return (
 		<div className="container">
 			<div className="col-12">
 				<h1 className="text-danger">Personajes</h1>
 			</div>
 			<div className="row overX">
-				{personajes.map((item, index) => {
+				{store.personajes.map((item, index) => {
 					return (
 						<div key={index} className="col-4 ">
-							<Cards
+							<Card
 								key={index}
 								nombre={item.nombre}
 								genero={item.genero}
@@ -42,7 +47,7 @@ export const Home = () => {
 				<h1 className="text-danger">Planetas</h1>
 			</div>
 			<div className="row overX">
-				{planetas.map((item, index) => {
+				{store.planetas.map((item, index) => {
 					return (
 						<div key={index} className="col-4 ">
 							<CardPlanetas

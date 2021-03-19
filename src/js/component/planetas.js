@@ -19,9 +19,7 @@ const CardPlanetas = props => {
 					<div className="row">
 						<div className="col-6">
 							<Link to="/single">
-								<a href="#" className="btn btn-primary">
-									Learn More
-								</a>
+								<div className="btn btn-primary">Learn More</div>
 							</Link>
 						</div>
 						<div className="col-6">

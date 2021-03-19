@@ -12,6 +12,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
+			],
+
+			personajes: [
+				{ nombre: "Lucke", genero: "Masculino", Hair_Color: "macho", eye: "cafe" },
+				{ nombre: "Princesa Leia", genero: "Femenino", Hair_Color: "Cafe", eye: "Cafes" },
+				{ nombre: "han solo", genero: "Masculino", Hair_Color: "Cafe", eye: "negros" },
+				{ nombre: "Obi One", genero: "Masculino", Hair_Color: "Cafe", eye: "negros" },
+				{ nombre: "Chubaca", genero: "Masculino", Hair_Color: "Cafe", eye: "cafe" }
+			],
+
+			planetas: [
+				{ planeta: "marte", terrain: "Marciano", poblacion: "100000" },
+				{ planeta: "Jupiter", terrain: "Jupiteriano", poblacion: "13454000" },
+				{ planeta: "Venus", terrain: "Veneciano", poblacion: "343400" },
+				{ planeta: "Saturno", terrain: "Saturniano", poblacion: "103434" },
+				{ planeta: "Pluton", terrain: "Plutoniano", poblacion: "3578647" }
 			]
 		},
 		actions: {
@@ -37,6 +53,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+				setStore({ personajes: personajes });
+				setStore({ planetas: planetas });
 			}
 		}
 	};
