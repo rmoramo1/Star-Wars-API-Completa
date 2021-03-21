@@ -14,32 +14,56 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 
+			planetas: [],
+
 			personajes: [
 				{ nombre: "Lucke", genero: "Masculino", Hair_Color: "macho", eye: "cafe" },
 				{ nombre: "Princesa Leia", genero: "Femenino", Hair_Color: "Cafe", eye: "Cafes" },
 				{ nombre: "han solo", genero: "Masculino", Hair_Color: "Cafe", eye: "negros" },
 				{ nombre: "Obi One", genero: "Masculino", Hair_Color: "Cafe", eye: "negros" },
 				{ nombre: "Chubaca", genero: "Masculino", Hair_Color: "Cafe", eye: "cafe" }
-			],
-
+			]
+			/*
 			planetas: [
 				{ planeta: "marte", terrain: "Marciano", poblacion: "100000" },
 				{ planeta: "Jupiter", terrain: "Jupiteriano", poblacion: "13454000" },
 				{ planeta: "Venus", terrain: "Veneciano", poblacion: "343400" },
 				{ planeta: "Saturno", terrain: "Saturniano", poblacion: "103434" },
 				{ planeta: "Pluton", terrain: "Plutoniano", poblacion: "3578647" }
-			]
+			]*/
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+
 			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+				const url = "https://www.swapi.tech/api/planets";
+				fetch(url)
+					.then(response => response.json())
+					.then(result => {
+						console.log("****", result);
+						setStore({
+							planetas: result.results
+						});
+					})
+
+					.catch(error => console.log("error", error));
 			},
+
+			getPlanetDetail: url => {
+				fetch(url)
+					.then(response => response.json())
+					.then(result => {
+						let detalle = result.result;
+						console.log("****", detalle.properties);
+						return detalle.properties;
+					})
+
+					.catch(error => console.log("error", error));
+			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();

@@ -1,20 +1,32 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+
 const CardPlanetas = props => {
+	const { store, actions } = useContext(Context);
+	const [detalle, setDetalle] = useState({});
+
+	useEffect(() => {
+		setDetalle(actions.getPlanetDetail(props.url));
+	});
+
 	return (
 		<div className="col">
 			<div className="card">
 				<img src="..." className="card-img-top" alt="..." />
 				<div className="card-body">
 					<h5 className="card-title">
-						<strong>Planeta:</strong> {props.planeta}
+						<strong>Name:</strong> {props.name}
 					</h5>
 					<p className="card-text">
-						<strong>Terrain:</strong> {props.terrain}
+						<strong>Diameter:</strong> {detalle ? detalle.diameter : ""}
 					</p>
 					<p className="card-text">
-						<strong>Población:</strong> {props.poblacion}
+						<strong>Population:</strong> {detalle ? detalle.population : ""}
+					</p>
+					<p className="card-text">
+						<strong>Terrain:</strong> {detalle ? detalle.terrain : ""}
 					</p>
 					<div className="row">
 						<div className="col-6">
@@ -34,8 +46,10 @@ const CardPlanetas = props => {
 	);
 };
 CardPlanetas.propTypes = {
-	planeta: PropTypes.string,
+	name: PropTypes.string,
+	diameter: PropTypes.string,
+	population: PropTypes.string,
 	terrain: PropTypes.string,
-	poblacion: PropTypes.number
+	url: PropTypes.string
 };
 export default CardPlanetas;
