@@ -10,14 +10,14 @@ const CardPlanetas = props => {
 	useEffect(
 		() => {
 			let detalle = actions.getPlanetDetail(props.url);
-			console.log(detalle);
+			console.log("royM", detalle);
 		},
 		[detalle]
 	);
 
 	return (
 		<div className="col">
-			<div className="card">
+			<div className="card shadow my-3">
 				<img src="http://placehold.it/500X300/" className="card-img-top" alt="..." />
 				<div className="card-body">
 					<h5 className="card-title">
