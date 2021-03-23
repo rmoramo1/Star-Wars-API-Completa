@@ -5,32 +5,27 @@ import { Context } from "../store/appContext";
 
 const CardPlanetas = props => {
 	const { store, actions } = useContext(Context);
-	const { detalle, setDetalle } = useState();
-
-	useEffect(
-		() => {
-			let detalle = actions.getPlanetDetail(props.url);
-			console.log("royM", detalle);
-		},
-		[detalle]
-	);
 
 	return (
 		<div className="col">
 			<div className="card shadow my-3">
-				<img src="http://placehold.it/500X300/" className="card-img-top" alt="..." />
+				<img
+					src="https://www.lafinestradigital.com/wp-content/uploads/2011/08/planetacoruscant.jpg"
+					className="card-img-top"
+					alt="..."
+				/>
 				<div className="card-body">
 					<h5 className="card-title">
 						<strong>Name:</strong> {props.name}
 					</h5>
 					<p className="card-text">
-						<strong>Diameter:</strong> {detalle ? detalle.diameter : ""}
+						<strong>Diameter:</strong> {props.diameter}
 					</p>
 					<p className="card-text">
-						<strong>Population:</strong> {detalle ? detalle.population : ""}
+						<strong>Population:</strong> {props.population}
 					</p>
 					<p className="card-text">
-						<strong>Terrain:</strong> {detalle ? detalle.terrain : ""}
+						<strong>Terrain:</strong> {props.terrain}
 					</p>
 					<div className="row">
 						<div className="col-6">
@@ -39,9 +34,11 @@ const CardPlanetas = props => {
 							</Link>
 						</div>
 						<div className="col-6">
-							<a href="#" className="btn btn-outline-warning">
-								<i className="fas fa-heart" />
-							</a>
+							<Link onClick={() => actions.addFavorite(props.name)}>
+								<div className="btn btn-outline-warning">
+									<i className="fas fa-heart" />
+								</div>
+							</Link>
 						</div>
 					</div>
 				</div>

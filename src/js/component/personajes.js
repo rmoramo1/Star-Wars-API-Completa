@@ -1,24 +1,30 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 const Card = props => {
+	const { store, actions } = useContext(Context);
 	return (
 		<div className="col">
 			<div className="card shadow my-3">
-				<img src="http://placehold.it/500X300/" className="card-img-top" alt="..." />
+				<img
+					src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTotAKINFft6S0Ylk5ri9nKKPiHIN_Y4NVrhA&usqp=CAU"
+					className="card-img-top"
+					alt="..."
+				/>
 				<div className="card-body">
 					<h5 className="card-title">
-						<strong>Personaje:</strong> {props.nombre}
+						<strong>Personaje:</strong> {props.name}
 					</h5>
 					<p className="card-text">
-						<strong>Genero:</strong> {props.genero}
+						<strong>Genero:</strong> {props.gender}
 					</p>
 					<p className="card-text">
-						<strong>Color de Pelo:</strong> {props.Hair_Color}
+						<strong>Color de Pelo:</strong> {props.hair_color}
 					</p>
 					<p className="card-text">
-						<strong>Color de ojos:</strong> {props.eye}
+						<strong>Color de ojos:</strong> {props.eye_color}
 					</p>
 					<div className="row">
 						<div className="col-6">
@@ -27,9 +33,11 @@ const Card = props => {
 							</Link>
 						</div>
 						<div className="col-6">
-							<a href="#" className="btn btn-outline-warning">
-								<i className="fas fa-heart" />
-							</a>
+							<Link onClick={() => actions.addFavorite(props.name)}>
+								<div className="btn btn-outline-warning">
+									<i className="fas fa-heart" />
+								</div>
+							</Link>
 						</div>
 					</div>
 				</div>
@@ -38,9 +46,10 @@ const Card = props => {
 	);
 };
 Card.propTypes = {
-	nombre: PropTypes.string,
-	genero: PropTypes.string,
-	Hair_Color: PropTypes.string,
-	eye: PropTypes.string
+	name: PropTypes.string,
+	gender: PropTypes.string,
+	hair_color: PropTypes.string,
+	eye_color: PropTypes.string,
+	url: PropTypes.string
 };
 export default Card;
