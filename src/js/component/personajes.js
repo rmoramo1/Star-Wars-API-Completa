@@ -6,7 +6,7 @@ const Card = props => {
 	return (
 		<div className="col">
 			<div className="card">
-				<img src="..." className="card-img-top" alt="..." />
+				<img src="http://placehold.it/500X300/" className="card-img-top" alt="..." />
 				<div className="card-body">
 					<h5 className="card-title">
 						<strong>Personaje:</strong> {props.nombre}

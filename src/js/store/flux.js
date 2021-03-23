@@ -52,7 +52,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => console.log("error", error));
 			},
 
-			getPlanetDetail: url => {
+			/*getPlanetDetail: url => {
 				fetch(url)
 					.then(response => response.json())
 					.then(result => {
@@ -62,6 +62,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 
 					.catch(error => console.log("error", error));
+            },*/
+
+			getPlanetDetail: url => {
+				let resultado = fetch(url)
+					.then(response => response.json())
+					.then(result => {
+						let detalle = result.result;
+						return detalle.properties;
+					})
+					.catch(error => console.log("error", error));
+				return resultado;
 			},
 
 			changeColor: (index, color) => {
