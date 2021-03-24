@@ -22,7 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const data = await response.json();
 				setStore({ planetas: data.results });
 			},
-			addFavorite: (name, type) => {
+			addFavorite: name => {
 				const store = getStore();
 				let count = 0;
 				store.favorites.map(each => {

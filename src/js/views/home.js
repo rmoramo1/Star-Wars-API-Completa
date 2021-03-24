@@ -23,6 +23,7 @@ export const Home = () => {
 								gender={item.gender}
 								hair_color={item.hair_color}
 								eye_color={item.eye_color}
+								id={index}
 							/>
 						</div>
 					);
@@ -42,6 +43,7 @@ export const Home = () => {
 								diameter={item.diameter}
 								population={item.population}
 								terrain={item.terrain}
+								id={index}
 							/>
 						</div>
 					);

@@ -5,6 +5,7 @@ import { Context } from "../store/appContext";
 
 export const Single = props => {
 	const { store, actions } = useContext(Context);
+
 	const params = useParams();
 	return (
 		<div className="container">
@@ -16,7 +17,7 @@ export const Single = props => {
 					/>
 				</div>
 				<div className="col-12 col-md-6 text-center">
-					<h1>personaje</h1>
+					<h1>{store.personajes[params.theid].name}</h1>
 					<p>
 						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
 						Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
@@ -41,5 +42,5 @@ export const Single = props => {
 };
 
 Single.propTypes = {
-	match: PropTypes.object
+	name: PropTypes.string
 };

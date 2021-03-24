@@ -25,25 +25,30 @@ export const Navbar = () => {
 							data-bs-toggle="dropdown"
 							aria-expanded="false">
 							Favoritos
-							<span className="badge bg-secondary">{store.favorites.length}</span>
+							<span className="badge bg-secondary m-2">{store.favorites.length}</span>
 						</button>
-						<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-							<li>
-								<a className="dropdown-item" href="#">
-									Action
-								</a>
-							</li>
-							<li>
-								<a className="dropdown-item" href="#">
-									Another action
-								</a>
-							</li>
-							<li>
-								<a className="dropdown-item" href="#">
-									Something else here
-								</a>
-							</li>
-						</ul>
+						<div
+							className="collapse navbar-collapse"
+							aria-labelledby="dropdownMenuButton1"
+							id="dropdownMenuButton1">
+							<ul className="dropdown-menu">
+								<li>
+									<a className="dropdown-item" href="#">
+										Action
+									</a>
+								</li>
+								<li>
+									<a className="dropdown-item" href="#">
+										Another action
+									</a>
+								</li>
+								<li>
+									<a className="dropdown-item" href="#">
+										Something else here
+									</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</nav>

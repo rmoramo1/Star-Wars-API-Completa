@@ -5,6 +5,7 @@ import { Context } from "../store/appContext";
 
 const Card = props => {
 	const { store, actions } = useContext(Context);
+
 	return (
 		<div className="col">
 			<div className="card shadow my-3">
@@ -28,7 +29,7 @@ const Card = props => {
 					</p>
 					<div className="row">
 						<div className="col-6">
-							<Link to="/single">
+							<Link to={`/single/${props.id}`}>
 								<div className="btn btn-primary">Learn More</div>
 							</Link>
 						</div>
@@ -50,6 +51,7 @@ Card.propTypes = {
 	gender: PropTypes.string,
 	hair_color: PropTypes.string,
 	eye_color: PropTypes.string,
+	id: PropTypes.number,
 	url: PropTypes.string
 };
 export default Card;
