@@ -7,7 +7,6 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
-import Navbar2 from "./component/navbar2";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
@@ -22,7 +21,6 @@ const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />
-					<Navbar2 />
 					<Switch>
 						<Route exact path="/">
 							<Home />

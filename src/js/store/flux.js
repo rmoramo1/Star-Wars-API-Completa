@@ -40,6 +40,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 						]
 					});
 				}
+			},
+			deleteFavorite: id => {
+				const store = getStore();
+				const newFavorites = store.favorites.filter((item, i) => i !== id);
+				setStore({ favorites: newFavorites });
 			}
 		}
 	};
