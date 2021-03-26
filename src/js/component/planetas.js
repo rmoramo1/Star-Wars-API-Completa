@@ -29,7 +29,7 @@ const CardPlanetas = props => {
 					</p>
 					<div className="row">
 						<div className="col-6">
-							<Link to="/single">
+							<Link to={`/singlePlanetas/${props.id}`}>
 								<div className="btn btn-primary">Learn More</div>
 							</Link>
 						</div>
@@ -51,6 +51,7 @@ CardPlanetas.propTypes = {
 	diameter: PropTypes.string,
 	population: PropTypes.string,
 	terrain: PropTypes.string,
+	id: PropTypes.number,
 	url: PropTypes.string
 };
 export default CardPlanetas;

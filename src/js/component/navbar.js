@@ -16,7 +16,7 @@ export const Navbar = () => {
 						src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Star_wars2.svg/1200px-Star_wars2.svg.png"
 					/>
 				</Link>
-				<div className="col-3">
+				<div className="col-6 col-lg-3">
 					<div className="dropdown">
 						<button
 							className="btn btn-primary dropdown-toggle"

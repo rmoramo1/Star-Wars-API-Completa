@@ -9,7 +9,7 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="container mb-5 pb-5">
+		<div className="container mb-5 pb-5 overflow-hidden">
 			<div className="col-12">
 				<h1 className="text-danger">Personajes</h1>
 			</div>
