@@ -30,7 +30,19 @@ export const Single = props => {
 						Quisque rutrum. Aenean imperdiet.
 					</p>
 				</div>
-
+			</div>
+			<div className="row text-center text-info mb-3">
+				<div className="col-12 col-md-4 border rounded shadow py-3">
+					Genero: {store.personajes[params.theid].gender}
+				</div>
+				<div className="col-12 col-md-4 border rounded shadow py-3">
+					Color de pelo: {store.personajes[params.theid].hair_color}
+				</div>
+				<div className="col-12 col-md-4 border rounded shadow py-3">
+					Color de ojos: {store.personajes[params.theid].eye_color}
+				</div>
+			</div>
+			<div className="row">
 				<Link to="/">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
 						Back home

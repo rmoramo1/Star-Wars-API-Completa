@@ -30,7 +30,20 @@ export const SinglePlanetas = props => {
 						Quisque rutrum. Aenean imperdiet.
 					</p>
 				</div>
+			</div>
+			<div className="row text-center text-info mb-3">
+				<div className="col-12 col-md-4 border rounded shadow py-3">
+					Diametro: {store.planetas[params.theid].diameter}
+				</div>
+				<div className="col-12 col-md-4 border rounded shadow py-3">
+					Población: {store.planetas[params.theid].population}
+				</div>
+				<div className="col-12 col-md-4 border rounded shadow py-3">
+					Terreno: {store.planetas[params.theid].terrain}
+				</div>
+			</div>
 
+			<div className="row">
 				<Link to="/">
 					<span className="btn btn-primary btn-lg" href="#" role="button">
 						Back home
