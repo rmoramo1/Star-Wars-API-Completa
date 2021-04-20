@@ -10,13 +10,23 @@ export const Navbar = () => {
 	return (
 		<div className="container bg-light sticky-top">
 			<nav className="navbar navbar-light mb-3">
-				<Link className="col-6 col-md-2" to="/">
+				<Link className="col-4 col-md-2" to="/">
 					<img
 						className="img-fluid"
 						src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Star_wars2.svg/1200px-Star_wars2.svg.png"
 					/>
 				</Link>
-				<div className="col-6 col-lg-3">
+				<div className="col-4">
+					<div className="row">
+						<Link to="/" className="col-6">
+							Home
+						</Link>
+						<Link to="/user" className="col-6">
+							Login / Register
+						</Link>
+					</div>
+				</div>
+				<div className="col-4 col-lg-3">
 					<div className="dropdown">
 						<button
 							className="btn btn-primary dropdown-toggle"
