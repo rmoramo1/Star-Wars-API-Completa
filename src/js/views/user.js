@@ -7,11 +7,11 @@ import { Context } from "../store/appContext";
 export const User = () => {
 	return (
 		<div className="container mt-5">
-			<div className="col-6 mx-auto rounded shadow py-4">
+			<div className="col-6 mx-auto rounded shadow py-4 bg-secondary text-white">
 				<nav className="col-12 text-center">
 					<div className="nav nav-tabs" id="nav-tab" role="tablist">
 						<a
-							className="active col-6"
+							className="active col-6 text-white"
 							id="nav-home-tab"
 							data-toggle="tab"
 							href="#nav-home"
@@ -21,7 +21,7 @@ export const User = () => {
 							Login
 						</a>
 						<a
-							className="col-6"
+							className="col-6 text-white"
 							id="nav-profile-tab"
 							data-toggle="tab"
 							href="#nav-profile"
@@ -44,34 +44,94 @@ export const User = () => {
 						<div className="input-group mb-3">
 							<div className="input-group-prepend">
 								<span className="input-group-text" id="basic-addon1">
-									@
+									<i className="fas fa-at" />
 								</span>
 							</div>
 							<input
+								id="mail"
+								name="mail"
 								type="text"
 								className="form-control"
-								placeholder="Username"
-								aria-label="Username"
+								placeholder="Mail"
+								aria-label="Mail"
 								aria-describedby="basic-addon1"
 							/>
 						</div>
 						<div className="input-group mb-3">
 							<div className="input-group-prepend">
 								<span className="input-group-text" id="basic-addon1">
-									PASS
+									<i className="fas fa-key" />
 								</span>
 							</div>
 							<input
 								type="password"
+								id="password"
+								name="password"
 								className="form-control"
 								placeholder="PASSWORD"
 								aria-label="Username"
 								aria-describedby="basic-addon1"
 							/>
 						</div>
+						<div className="col-12 text-center">
+							<a className="btn btn-dark">LOGIN</a>
+						</div>
 					</div>
 					<div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-						...2
+						<div className="col-12 text-center">
+							<h2 className="col-12">Register</h2>
+						</div>
+						<div className="input-group mb-3">
+							<div className="input-group-prepend">
+								<span className="input-group-text" id="basic-addon1">
+									<i className="fas fa-at" />
+								</span>
+							</div>
+							<input
+								id="registerMail"
+								name="registerMail"
+								type="text"
+								className="form-control"
+								placeholder="Mail"
+								aria-label="Mail"
+								aria-describedby="basic-addon1"
+							/>
+						</div>
+						<div className="input-group mb-3">
+							<div className="input-group-prepend">
+								<span className="input-group-text" id="basic-addon1">
+									<i className="far fa-user" />
+								</span>
+							</div>
+							<input
+								id="username"
+								name="username"
+								type="text"
+								className="form-control"
+								placeholder="username"
+								aria-label="username"
+								aria-describedby="basic-addon1"
+							/>
+						</div>
+						<div className="input-group mb-3">
+							<div className="input-group-prepend">
+								<span className="input-group-text" id="basic-addon1">
+									<i className="fas fa-key" />
+								</span>
+							</div>
+							<input
+								id="registerPassword"
+								name="registerPassword"
+								type="password"
+								className="form-control"
+								placeholder="Password"
+								aria-label="password"
+								aria-describedby="basic-addon1"
+							/>
+						</div>
+						<div className="col-12 text-center">
+							<a className="btn btn-dark">SUBMIT</a>
+						</div>
 					</div>
 				</div>
 			</div>

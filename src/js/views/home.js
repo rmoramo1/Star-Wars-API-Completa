@@ -11,7 +11,7 @@ export const Home = () => {
 	return (
 		<div className="container mb-5 pb-5 overflow-hidden">
 			<div className="col-12">
-				<h1 className="text-danger">Personajes</h1>
+				<h1 className="text-white text-center col-12">Personajes</h1>
 			</div>
 			<div className="row overX">
 				{store.personajes.map((item, index) => {
@@ -30,7 +30,7 @@ export const Home = () => {
 				})}
 			</div>
 			<div className="col-12 mt-5">
-				<h1 className="text-danger">Planetas</h1>
+				<h1 className="text-white text-center col-12">Planetas</h1>
 			</div>
 			<div className="row overX">
 				{store.planetas.map((item, index) => {
