@@ -3,6 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			planetas: [],
 			personajes: [],
+			user: [],
 			favorites: []
 		},
 		actions: {
@@ -11,16 +12,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor(0, "green");
 			},
 			loadPersonas: async () => {
-				const url = "https://swapi.dev/api/people/";
+				const url = "https://3000-olive-squid-pdxtg30j.ws-us03.gitpod.io/personajes";
 				const response = await fetch(url);
-				const data = await response.json();
-				setStore({ personajes: data.results });
+				const results = await response.json();
+				setStore({ personajes: results });
 			},
 			loadPlanets: async () => {
-				const url = "https://swapi.dev/api/planets/";
+				const url = "https://3000-olive-squid-pdxtg30j.ws-us03.gitpod.io/planetas";
 				const response = await fetch(url);
-				const data = await response.json();
-				setStore({ planetas: data.results });
+				const results = await response.json();
+				setStore({ planetas: results });
+			},
+			logUser: async user => {
+				const url = "https://3000-olive-squid-pdxtg30j.ws-us03.gitpod.io/user";
+				const response = await fetch(url);
+				const results = await response.json();
+				setStore({ user: results });
+				if (usuario.mail == user.mail) {
+					console.log(usuario.mail);
+				}
 			},
 			addFavorite: name => {
 				const store = getStore();

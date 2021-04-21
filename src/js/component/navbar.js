@@ -27,7 +27,7 @@ export const Navbar = () => {
 					</div>
 				</div>
 				<div className="col-5">
-					<div className="col-6 float-left d-none">
+					<div className="col-6 float-left">
 						<span>Roy Mora Mora</span>
 					</div>
 					<div className="col-6 float-left">

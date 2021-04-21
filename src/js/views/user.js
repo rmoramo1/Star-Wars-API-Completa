@@ -3,8 +3,11 @@ import Card from "../component/personajes";
 import CardPlanetas from "../component/planetas";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-export const User = () => {
+export const User = props => {
+	const { store, actions } = useContext(Context);
 	return (
 		<div className="container mt-5">
 			<div className="col-6 mx-auto rounded shadow py-4 bg-secondary text-white">
@@ -74,7 +77,9 @@ export const User = () => {
 							/>
 						</div>
 						<div className="col-12 text-center">
-							<a className="btn btn-dark">LOGIN</a>
+							<Link onClick={() => actions.addUser(props.usuario)}>
+								<div className="btn btn-dark">SUBMIT</div>
+							</Link>
 						</div>
 					</div>
 					<div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
@@ -130,11 +135,16 @@ export const User = () => {
 							/>
 						</div>
 						<div className="col-12 text-center">
-							<a className="btn btn-dark">SUBMIT</a>
+							<Link onClick={() => actions.logUser()}>
+								<div className="btn btn-dark">SUBMIT</div>
+							</Link>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	);
+};
+User.propTypes = {
+	usuario: PropTypes.string
 };
