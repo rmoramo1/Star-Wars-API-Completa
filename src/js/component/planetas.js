@@ -48,8 +48,8 @@ const CardPlanetas = props => {
 };
 CardPlanetas.propTypes = {
 	name: PropTypes.string,
-	diameter: PropTypes.string,
-	population: PropTypes.string,
+	diameter: PropTypes.number,
+	population: PropTypes.number,
 	terrain: PropTypes.string,
 	id: PropTypes.number,
 	url: PropTypes.string

@@ -77,7 +77,7 @@ export const User = props => {
 							/>
 						</div>
 						<div className="col-12 text-center">
-							<Link onClick={() => actions.addUser(props.usuario)}>
+							<Link onClick={() => actions.logUser()}>
 								<div className="btn btn-dark">SUBMIT</div>
 							</Link>
 						</div>
