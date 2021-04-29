@@ -12,27 +12,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor(0, "green");
 			},
 			loadPersonas: async () => {
-				const url = "https://3000-amaranth-constrictor-4nsnwjpl.ws-us03.gitpod.io/personajes";
+				const url = "https://3000-plum-cockroach-9onms0lp.ws-us04.gitpod.io/personajes";
 				const response = await fetch(url);
 				const results = await response.json();
 				setStore({ personajes: results });
 			},
 			loadPlanets: async () => {
-				const url = "https://3000-amaranth-constrictor-4nsnwjpl.ws-us03.gitpod.io/planetas";
+				const url = "https://3000-plum-cockroach-9onms0lp.ws-us04.gitpod.io/planetas";
 				const response = await fetch(url);
 				const results = await response.json();
 				setStore({ planetas: results });
-			},
-			logUser: async () => {
-				const url = "https://3000-amaranth-constrictor-4nsnwjpl.ws-us03.gitpod.io/user";
-				const response = await fetch(url);
-				const results = await response.json();
-				console.log(results);
-				setStore({ user: results });
-				const store = getStore();
-				store.user.map(each => {
-					console.log(each.name);
-				});
 			},
 			addFavorite: name => {
 				const store = getStore();
